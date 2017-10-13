@@ -1,6 +1,6 @@
 # Rancher Community Catalog 
 
-This catalog provides templates created by the community, and they are not maintained or supported by Rancher Labs.
+This catalog provides templates created by ziliz854(ziliz854@163.com), and they are not maintained or supported by Rancher Labs.
 
 # License
 Copyright (c) 2014-2016 [Rancher Labs, Inc.](http://rancher.com)
