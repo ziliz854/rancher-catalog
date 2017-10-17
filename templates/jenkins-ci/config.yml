@@ -1,0 +1,5 @@
+name: Jenkins
+description: |
+  Jenkins 持续集成服务
+version: 2.60.1-test1
+category: 持续集成

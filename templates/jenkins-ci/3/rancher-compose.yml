@@ -1,0 +1,42 @@
+.catalog:
+  name: Jenkins
+  version: 2.60.1-test1
+  description: |
+    Jenkins 持续集成管理服务.
+  questions:
+  - variable: "PORT"
+    type: "int"
+    label: "端口号"
+    description: "Which port should Jenkins listen on?"
+    default: 8080
+    required: true
+  - variable: "volume_work"
+    description: "Work volume to save jenkins data"
+    label: "数据卷:"
+    required: true
+    default: "/var/lib/docker/jenkins-ci"
+    type: "string"
+  - variable: "plugins"
+    type: "multiline"
+    label: "插件列表"
+    description: |
+      List of plugins in the format <plugin_name>[:<version>]
+      one entry per line.
+    default: |
+      credentials
+      git
+      git-client
+      github
+      github-api
+      github-oauth
+      greenballs
+      junit
+      plain-credentials
+      scm-api
+      ssh-credentials
+      ssh-slaves
+      swarm
+jenkins-primary:
+  metadata:
+    plugins: |
+      ${plugins}
