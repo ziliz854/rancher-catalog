@@ -1,0 +1,18 @@
+version: '0'
+catalog:
+  name: "TensorFlow"
+  version: "v1.1.1"
+  description: "Blog tool, publishing platform and CMS based on bitnami images"
+  uuid: TensorFlow-1
+  minimum_rancher_version: v0.51.0
+services:
+  tensorflow:
+    scale: 1
+    retain_ip: true
+    health_check:
+      port: 8888
+      interval: 5000
+      unhealthy_threshold: 3
+      request_line: 'GET / HTTP/1.0'
+      healthy_threshold: 2
+      response_timeout: 5000

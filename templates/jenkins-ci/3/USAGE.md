@@ -2,4 +2,4 @@
 
 
 ### 访问方式:
- * <a href="{$T.publicEndpoints[0].url}" target="blank">Jenkins</a>
+ * <a href="{$T.publicEndpoints.array[0].url}" target="blank">Jenkins</a>
