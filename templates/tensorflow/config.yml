@@ -1,5 +1,5 @@
-name: TensorFlow Notebook
+name: TensorFlow
 description: |
-  Container-Native System Visibility and Troubleshooting
+  谷歌基于DistBelief进行研发的第二代人工智能学习系统
 version: v0.0.1
-category: AI
+category: 深度学习
