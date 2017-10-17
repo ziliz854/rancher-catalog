@@ -1,0 +1,5 @@
+name: PostgreSQL
+description: |
+  PostgreSQL — 开源对象关系型数据库系统 (ORDBMS)
+version: v0.0.2
+category: 数据库

@@ -1,0 +1,5 @@
+name: MongoDB
+description: |
+  MongoDB 是一个分布式NoSQL数据库.
+version: "3.4-test1"
+category: 数据库

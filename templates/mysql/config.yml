@@ -1,0 +1,5 @@
+name: MySQL
+description: |
+  MySQL — 开源关系型数据库管理系统 (RDBMS)
+version: v0.0.1
+category: 数据库

@@ -1,0 +1,7 @@
+name: Project Harbor
+description: |
+  Harbor —— 企业级容器镜像仓库 [by VMware]
+version: 1.1.1-1-rev1
+category: 镜像仓库
+projectURL: https://github.com/vmware/harbor 
+license: Apache License 2.0 

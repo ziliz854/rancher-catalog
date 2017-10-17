@@ -1,0 +1,5 @@
+name: RabbitMQ 3.6
+description: |
+  在AMQP基础上完成的，可复用的企业消息系统
+version: "0.2.1"
+category: 消息队列

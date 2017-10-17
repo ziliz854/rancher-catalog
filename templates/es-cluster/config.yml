@@ -1,0 +1,5 @@
+name: Elasticsearch Cluster 5.5.1
+description: |
+  Elasticsearch 集群
+version: 5.5.1-test1
+category: ELK

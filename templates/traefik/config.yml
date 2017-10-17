@@ -1,0 +1,9 @@
+name: Traefik
+description: |
+  为了让部署微服务更加便捷而诞生的现代HTTP反向代理、负载均衡工具
+version: v1.3.6
+category: 负载均衡
+maintainer: "Raul Sanchez <rawmind@gmail.com>"
+minimum_rancher_version: v0.59.0
+license:
+projectURL: https://github.com/rawmind0/alpine-traefik

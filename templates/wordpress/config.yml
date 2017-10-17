@@ -1,0 +1,5 @@
+name: Wordpress
+description: |
+  使用PHP语言开发的博客平台、内容管理系统（CMS）
+version: v0.2-bitnami
+category: 博客
