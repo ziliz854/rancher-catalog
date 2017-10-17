@@ -1,0 +1,5 @@
+name: TensorFlow
+description: |
+  TensorFlow —— 谷歌基于DistBelief进行研发的第二代人工智能学习系统
+version: v1.1.1
+category: 机器学习
