@@ -4,3 +4,5 @@ tensorflow:
   stdin_open: true
   tty: true
   image: tensorflow/tensorflow:latest
+  ports:
+    - 8888:8888
