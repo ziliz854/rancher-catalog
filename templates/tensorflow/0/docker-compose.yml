@@ -1,4 +1,4 @@
-sysdig:
+tensorflow:
   container_name: sysdig
   privileged: true
   stdin_open: true
