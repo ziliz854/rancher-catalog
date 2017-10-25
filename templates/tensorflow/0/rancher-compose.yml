@@ -1,5 +1,21 @@
 .catalog:
   name: "TensorFlow"
-  version: "v0.0.1"
-  description: "TensorFlow notebook"
-
+  version: "v1.4.0-rc1-devel-py3"
+  description: "TensorFlow notebook and tensorboard"
+  questions:
+    - variable: "password"
+      label: "NoteBook登陆密码"
+      description: "Jupyter Notebook login password"
+      required: true
+      default: ""
+      type: "password"
+    - variable: "log_dir"
+      label: "Log输出目录"
+      description: "log directory"
+      required: true
+      default: "/tmp/tensorflow_logs"
+      type: "string"
+jupyter:
+  scale: 1
+tensorboard:
+  scale: 1

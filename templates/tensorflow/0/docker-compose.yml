@@ -1,8 +1,24 @@
-tensorflow:
-  container_name: tensorflow
-  privileged: true
-  stdin_open: true
-  tty: true
-  image: tensorflow/tensorflow:latest
-  ports:
-    - 8888:8888
+version: '2'
+services:
+  jupyter:
+    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3
+    container_name: jupyter
+    ports:
+      - 8888:8888
+    environment:
+      - PASSWORD="${password}"
+    volumes:
+      - "${log_dir}"
+  tensorboard:
+    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3
+    container_name: tensorboard
+    ports:
+      - 6006:6006
+    volumes_from:
+      - jupyter
+    command:
+      - "tensorboard"
+      - "--logdir"
+      - "${log_dir}"
+      - "--host"
+      - "0.0.0.0"
