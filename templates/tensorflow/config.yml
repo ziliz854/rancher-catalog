@@ -1,5 +1,5 @@
 name: TensorFlow
 description: |
   谷歌基于DistBelief进行研发的第二代人工智能学习系统
-version: v0.0.1
+version: v1.4.0-rc1-devel-py3
 category: 深度学习
