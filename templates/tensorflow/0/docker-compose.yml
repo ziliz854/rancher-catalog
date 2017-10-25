@@ -6,7 +6,7 @@ services:
     ports:
       - 8888:8888
     environment:
-      - PASSWORD="${password}"
+      - 'PASSWORD=${password}'
     volumes:
       - "${log_dir}"
     command:
