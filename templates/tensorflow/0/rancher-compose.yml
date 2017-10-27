@@ -1,6 +1,6 @@
 .catalog:
   name: "TensorFlow"
-  version: "v1.4.0-rc1-devel-py3"
+  version: "v1.4.0-rc1-devel-py3-pos"
   description: "TensorFlow notebook and tensorboard"
   questions:
     - variable: "password"
@@ -14,6 +14,12 @@
       description: "log directory"
       required: true
       default: "/tmp/tensorflow_logs"
+      type: "string"
+    - variable: "data_dir"
+      label: "数据存放目录"
+      description: "test/train data directory"
+      required: true
+      default: "/tmp/tensorflow_data"
       type: "string"
 jupyter:
   scale: 1

@@ -1,19 +1,24 @@
 version: '2'
 services:
   jupyter:
-    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3
+    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3-pos
     container_name: jupyter
     ports:
       - 8888:8888
     environment:
       - 'PASSWORD=${password}'
+      - 'LOG_DIR=${log_dir}'
+      - 'DATA_DIR=${data_dir}'
     volumes:
       - "${log_dir}"
+      - "${data_dir}"
     command:
       - "/run_jupyter.sh"
       - "--allow-root"
+    labels:
+      io.rancher.sidekicks: tensorboard
   tensorboard:
-    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3
+    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3-pos
     container_name: tensorboard
     ports:
       - 6006:6006
@@ -25,5 +30,3 @@ services:
       - '${log_dir}'
       - '--host'
       - '0.0.0.0'
-    labels:
-      io.rancher.sidekicks: jupyter
