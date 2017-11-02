@@ -31,7 +31,7 @@ services:
       - '--host'
       - '0.0.0.0'
   tensorflow-data:
-    image: paraos/tfnotebooks:latest
+    image: paraos/tfnotebooks:1.0.0
     container_name: tensorflow-data
     network_mode: none
     volumes:
