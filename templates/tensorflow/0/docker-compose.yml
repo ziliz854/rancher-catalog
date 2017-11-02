@@ -1,7 +1,7 @@
 version: '2'
 services:
   jupyter:
-    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3-pos
+    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3
     container_name: jupyter
     ports:
       - 8888:8888
@@ -11,13 +11,14 @@ services:
       - 'DATA_DIR=${data_dir}'
     volumes_from:
       - tensorflow-data
+    working_dir: '/notebooks'
     command:
       - "/run_jupyter.sh"
       - "--allow-root"
     labels:
       io.rancher.sidekicks: tensorboard, tensorflow-data
   tensorboard:
-    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3-pos
+    image: tensorflow/tensorflow:1.4.0-rc1-devel-py3
     container_name: tensorboard
     ports:
       - 6006:6006
@@ -30,10 +31,11 @@ services:
       - '--host'
       - '0.0.0.0'
   tensorflow-data:
-    image: alpine:latest
+    image: paraos/tfnotebooks:latest
     container_name: tensorflow-data
     network_mode: none
     volumes:
+      - "/notebooks"
       - "${log_dir}"
       - "${data_dir}"
     labels:
