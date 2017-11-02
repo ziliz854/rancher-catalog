@@ -15,7 +15,7 @@ services:
       - "/run_jupyter.sh"
       - "--allow-root"
     labels:
-      io.rancher.sidekicks: tensorboard, tensorflow_data
+      io.rancher.sidekicks: tensorboard, tensorflow-data
   tensorboard:
     image: tensorflow/tensorflow:1.4.0-rc1-devel-py3-pos
     container_name: tensorboard
