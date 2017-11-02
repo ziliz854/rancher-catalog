@@ -15,10 +15,9 @@ TensorFlow 提供`Jupyter Notebook`, `TensorBoard`来进行交互操作。
 | LOG_DIR | `/tmp/tensorflow_logs` | log路径，将TensorFlow运行的汇总数据输出到这个路径后，可以打开TensorBoard查看可视化数据 |
 | DATA_DIR | `/tmp/tensorflow_data` | data路径，用于存放训练用和测试用数据的临时目录 |
 
-#### python中获取环境变量方法：
+### python中获取环境变量方法：
 
 ```python
 # 获取环境变量值：
-
 log_dir = os.getenv('LOG_DIR', '/tmp/logs')
 ```

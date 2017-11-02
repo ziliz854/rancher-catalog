@@ -9,24 +9,32 @@ services:
       - 'PASSWORD=${password}'
       - 'LOG_DIR=${log_dir}'
       - 'DATA_DIR=${data_dir}'
-    volumes:
-      - "${log_dir}"
-      - "${data_dir}"
+    volumes_from:
+      - tensorflow-data
     command:
       - "/run_jupyter.sh"
       - "--allow-root"
     labels:
-      io.rancher.sidekicks: tensorboard
+      io.rancher.sidekicks: tensorboard, tensorflow_data
   tensorboard:
     image: tensorflow/tensorflow:1.4.0-rc1-devel-py3-pos
     container_name: tensorboard
     ports:
       - 6006:6006
     volumes_from:
-      - jupyter
+      - tensorflow-data
     command: 
       - 'tensorboard'
       - '--logdir'
       - '${log_dir}'
       - '--host'
       - '0.0.0.0'
+  tensorflow-data:
+    image: alpine:latest
+    container_name: tensorflow-data
+    network_mode: none
+    volumes:
+      - "${log_dir}"
+      - "${data_dir}"
+    labels:
+      io.rancher.container.start_once: 'true'
