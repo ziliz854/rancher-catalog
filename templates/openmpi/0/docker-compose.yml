@@ -1,0 +1,33 @@
+version: '2'
+services:
+  openmpi:
+    image: sysmso/docker-openmpi:latest
+    container_name: openmpi
+    volumes_from:
+      - openmpi-data
+    working_dir: '/work'
+    entrypoint:
+      - "bash"
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.sidekicks: samba, openmpi-data
+  samba:
+    image: paraos/samba:latest
+    container_name: samba
+    network_mode: host
+    volumes_from:
+      - openmpi-data
+    command: 
+      - '-u'
+      - 'user;user'
+      - '-s'
+      - 'work;/work/;yes;no;no;user;user'
+  openmpi-data:
+    image: alpine:latest
+    container_name: openmpi-data
+    network_mode: none
+    volumes:
+      - "/work"
+    labels:
+      io.rancher.container.start_once: 'true'

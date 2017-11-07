@@ -1,0 +1,5 @@
+.catalog:
+  name: "OpenMPI"
+  version: "v1.0.0"
+  description: "OpenMPI和C编译环境"
+  questions:
